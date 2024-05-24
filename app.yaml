@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskapp
+  labels:
+    app: flaskapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskapp
+  template:
+    metadata:
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+        - name: flaskapp
+          image: hasanasif/flaskmongo
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: flaskapp-svc
+spec:
+  selector:
+    app: flaskapp
+  ports:
+    - port: 8080
+      targetPort: 5000
+  type: LoadBalancer
