@@ -19,6 +19,7 @@ client = MongoClient(host=connection_str,
 db = client['user_emails']
 collection = db['emails']
 
+
 def send_email(receiver_email):
     #sender_email = "habuffalo56@gmail.com"
     #password = "ptnu movr pspb qmqr"
