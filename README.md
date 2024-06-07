@@ -1,3 +1,3 @@
 # Microservice-Deployment-Kubernetes
 
- Deplyed multiple microservices on Kubernetes cluster
+ Deployed multiple microservices on Kubernetes cluster
